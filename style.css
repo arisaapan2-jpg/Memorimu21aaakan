@@ -1,0 +1,50 @@
+:root {
+    --neon: #00f2ff;
+    --bg: #0a0a0a;
+    --glass: rgba(255, 255, 255, 0.07);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: white; font-family: 'Poppins', sans-serif; overflow: hidden; }
+
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 20px; border-bottom: 1px solid var(--neon); background: rgba(0,0,0,0.9);
+}
+
+.logo-text { font-family: 'Orbitron', sans-serif; font-weight: bold; font-size: 1.2rem; }
+.rgb-text { color: var(--neon); text-shadow: 0 0 10px var(--neon); }
+
+.app-container {
+    height: calc(100vh - 65px); display: flex; flex-direction: column; padding: 10px;
+}
+
+#chat-box {
+    flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 10px;
+}
+
+.msg { padding: 12px 16px; border-radius: 15px; font-size: 14px; max-width: 85%; line-height: 1.5; }
+.bot { align-self: flex-start; background: var(--glass); border-left: 3px solid var(--neon); border-bottom-left-radius: 2px; }
+.user { align-self: flex-end; background: var(--neon); color: black; font-weight: 600; border-bottom-right-radius: 2px; }
+
+.input-area { padding: 10px; background: rgba(0,0,0,0.5); border-radius: 20px; margin-top: 5px; }
+.quick-tags { display: flex; gap: 8px; margin-bottom: 10px; overflow-x: auto; }
+.quick-tags button {
+    background: transparent; border: 1px solid var(--neon); color: var(--neon);
+    padding: 4px 12px; border-radius: 20px; font-size: 11px; cursor: pointer;
+}
+
+.input-row { display: flex; gap: 10px; }
+input {
+    flex: 1; background: #1a1a1a; border: 1px solid #333; color: white;
+    padding: 12px; border-radius: 12px; outline: none;
+}
+#send-btn { background: var(--neon); border: none; padding: 0 20px; border-radius: 12px; font-weight: bold; }
+
+/* Sidebar Fix */
+#sidebar {
+    position: fixed; top: 0; left: 0; width: 260px; height: 100%;
+    background: #000; border-right: 1px solid var(--neon); z-index: 1000; transition: 0.3s;
+}
+.sidebar-hidden { transform: translateX(-100%); }
+.hidden { display: none; }
